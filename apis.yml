@@ -3,7 +3,11 @@ url: https://raw.githubusercontent.com/api-evangelist/black-forest-labs/refs/hea
 name: Black Forest Labs
 x-type: company
 description: >-
-  Black Forest Labs is the company behind the Flux family of image generation models. APIs serve Flux Pro, Flux Dev, and Flux Schnell with text-to-image and image editing.
+  Black Forest Labs is the company behind the Flux family of image generation models. The
+  Flux API exposes asynchronous image generation endpoints via global and regional base URLs
+  with model-named paths (e.g. /v1/flux-2-pro). Models include FLUX.2 (flex/pro/max/klein),
+  FLUX.1 Kontext, FLUX1.1 [pro] Ultra, FLUX1.1 [pro], FLUX.1 Fill, and FLUX Schnell. Auth via
+  BFL_API_KEY bearer token.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -14,10 +18,42 @@ tags:
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: black-forest-labs:flux
+    name: Flux Image Generation API
+    description: >-
+      REST API for asynchronous image generation across the Flux model family. Submit a
+      generation request, then poll the returned polling_url for the result. Global endpoint
+      at https://api.bfl.ai with regional alternatives at https://api.eu.bfl.ai (GDPR) and
+      https://api.us.bfl.ai. Model-name path pattern /v1/{model}.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.bfl.ai/
+    baseURL: https://api.bfl.ai
+    tags:
+      - Image Generation
+      - Flux
+      - Async
+      - Polling
+      - Text-to-Image
+      - Image Editing
+    properties:
+      - type: Documentation
+        url: https://docs.bfl.ai/
+      - type: SignUp
+        url: https://dashboard.bfl.ai/
+      - type: Pricing
+        url: https://bfl.ai/pricing
+      - type: LLMsTxt
+        url: https://docs.bfl.ml/llms.txt
+      - type: GitHub
+        url: https://github.com/black-forest-labs/flux
 common:
   - type: Website
     url: https://blackforestlabs.ai/
+  - type: Documentation
+    url: https://docs.bfl.ai/
+  - type: GitHub
+    url: https://github.com/black-forest-labs
   - type: Plans
     url: plans/black-forest-labs-plans-pricing.yml
   - type: RateLimits

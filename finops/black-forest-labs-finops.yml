@@ -5,7 +5,7 @@ provider: Black Forest Labs
 providerId: black-forest-labs
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Image Generation
@@ -15,10 +15,14 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Black Forest Labs. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Black Forest Labs. BFL bills via prepaid credits drawn down
+  per generation. Cost per image varies by Flux model variant, output dimensions, and number
+  of input images. Schnell is free direct from BFL; Pro and 1.1 Pro list at ~$0.04/image.
+notes: Cost optimization centers on model selection (Schnell free vs Pro paid) and output dimension control.
 sources:
-- https://blackforestlabs.ai/
+- https://bfl.ai/pricing
+- https://docs.bfl.ai/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,15 +33,15 @@ alignedWith:
 publisherName: Black Forest Labs
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Prepaid Credits + Per-Generation Usage
+  billingFrequency: On Credit Purchase / Monthly
   billingCurrency: USD
   chargeCategories:
   - Usage
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Black Forest Labs
+  ServiceName: BFL Flux Image Generation API
   ServiceCategory: AI
   ProviderName: Black Forest Labs
   PublisherName: Black Forest Labs
@@ -45,22 +49,30 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: image_generations
+  description: Image generations charged per call against credit balance.
+  unit: image
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - model
+  - region
+  - dimensions
+- name: credits_purchased
+  description: Prepaid credit purchases.
+  unit: USD
+  aggregation: sum
+  dimensions:
+  - account
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track per-call cost via account credit drawdown reports.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag generations to applications and creative workflows.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Use Schnell or smaller variants for drafts, reserve Pro/Max for final assets; smaller dimensions cost less.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign budget owners per workflow / creative team.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

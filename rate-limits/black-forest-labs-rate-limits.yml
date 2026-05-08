@@ -5,7 +5,7 @@ provider: Black Forest Labs
 providerId: black-forest-labs
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: partial
 tags:
 - AI
 - Image Generation
@@ -15,21 +15,34 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Black Forest Labs. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  BFL's primary throughput control is async generation with a polling_url returned per
+  request. Specific RPS or concurrent job caps are not publicly documented; large customers
+  should consult sales for negotiated throughput.
+notes: Async pattern (submit + poll) is the documented control mechanism; HTTP RPS limits are not public.
 sources:
-- https://blackforestlabs.ai/
+- https://docs.bfl.ai/
+- https://bfl.ai/pricing
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Async Job Concurrency
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: concurrent_jobs
+  limit: not publicly documented
+  notes: Use the returned polling_url; do not construct your own polling URL.
+- name: HTTP Requests
+  scope: account
+  metric: requests
+  limit: not publicly documented
+  notes: Standard 429 backoff applies.
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Polling Discipline
+  description: Always use the polling_url returned in the response rather than constructing one client-side.
+- name: Regional Routing
+  description: Choose the EU or US regional endpoint to control data residency and latency.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
