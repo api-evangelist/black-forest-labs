@@ -1,7 +1,7 @@
 aid: black-forest-labs
 url: https://raw.githubusercontent.com/api-evangelist/black-forest-labs/refs/heads/main/apis.yml
 name: Black Forest Labs
-x-type: company
+kind: company
 description: >-
   Black Forest Labs is the company behind the Flux family of image generation models. The
   Flux API exposes asynchronous image generation endpoints via global and regional base URLs
