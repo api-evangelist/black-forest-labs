@@ -48,6 +48,8 @@ apis:
       - type: GitHub
         url: https://github.com/black-forest-labs/flux
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/bflai
   - type: Website
     url: https://blackforestlabs.ai/
   - type: Documentation
