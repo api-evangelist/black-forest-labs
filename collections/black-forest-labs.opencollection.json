@@ -1,0 +1,236 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Black Forest Labs FLUX API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-key",
+      "value": "{{x-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "FLUX 1.1 [pro] generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.1",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX 1.1 [pro] generation"
+        },
+        {
+          "info": {
+            "name": "FLUX 1.1 [pro] Ultra generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.1-ultra",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX 1.1 [pro] Ultra generation"
+        },
+        {
+          "info": {
+            "name": "FLUX.1 [dev] generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-dev",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.1 [dev] generation"
+        },
+        {
+          "info": {
+            "name": "FLUX.2 [PRO] generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-2-pro",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.2 [PRO] generation"
+        },
+        {
+          "info": {
+            "name": "FLUX.2 [FLEX] generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-2-flex",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.2 [FLEX] generation"
+        },
+        {
+          "info": {
+            "name": "FLUX.2 [MAX] generation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-2-max",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.2 [MAX] generation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Editing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "FLUX.1 Fill [pro] - inpaint with a mask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.0-fill",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.1 Fill [pro] - inpaint with a mask"
+        },
+        {
+          "info": {
+            "name": "FLUX.1 Expand [pro] - outpaint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.0-expand",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.1 Expand [pro] - outpaint"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Utility",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve generation result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bfl.ai/v1/get_result",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Task identifier returned by a generation endpoint."
+              }
+            ]
+          },
+          "docs": "Retrieve generation result"
+        },
+        {
+          "info": {
+            "name": "Get account credit balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bfl.ai/v1/credits"
+          },
+          "docs": "Get account credit balance"
+        },
+        {
+          "info": {
+            "name": "List the caller's fine-tunes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bfl.ai/v1/my_finetunes"
+          },
+          "docs": "List the caller's fine-tunes"
+        },
+        {
+          "info": {
+            "name": "Get fine-tune details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bfl.ai/v1/finetune_details",
+            "params": [
+              {
+                "name": "finetune_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get fine-tune details"
+        },
+        {
+          "info": {
+            "name": "Delete a fine-tune",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/delete_finetune",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a fine-tune"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
