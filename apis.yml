@@ -8,7 +8,7 @@ description: >-
   with model-named paths (e.g. /v1/flux-2-pro). Models include FLUX.2 (flex/pro/max/klein),
   FLUX.1 Kontext, FLUX1.1 [pro] Ultra, FLUX1.1 [pro], FLUX.1 Fill, and FLUX Schnell. Auth via
   BFL_API_KEY bearer token.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Image Generation
@@ -26,7 +26,7 @@ apis:
       generation request, then poll the returned polling_url for the result. Global endpoint
       at https://api.bfl.ai with regional alternatives at https://api.eu.bfl.ai (GDPR) and
       https://api.us.bfl.ai. Model-name path pattern /v1/{model}.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.bfl.ai/
     baseURL: https://api.bfl.ai
     tags:
