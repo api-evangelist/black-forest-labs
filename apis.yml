@@ -39,11 +39,11 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.bfl.ai/
-      - type: SignUp
+      - type: Signup
         url: https://dashboard.bfl.ai/
       - type: Pricing
         url: https://bfl.ai/pricing
-      - type: LLMsTxt
+      - type: LlmsText
         url: https://docs.bfl.ml/llms.txt
       - type: GitHub
         url: https://github.com/black-forest-labs/flux
