@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/black-forest-labs-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: x-key
+  description: BFL API key.
+  sources:
+  - openapi/black-forest-labs-openapi.yml

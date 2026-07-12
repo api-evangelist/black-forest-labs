@@ -48,6 +48,10 @@ apis:
       - type: GitHub
         url: https://github.com/black-forest-labs/flux
 common:
+  - type: DomainSecurity
+    url: security/black-forest-labs-domain-security.yml
+  - type: Authentication
+    url: authentication/black-forest-labs-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/bflai
   - type: Website
@@ -62,6 +66,8 @@ common:
     url: rate-limits/black-forest-labs-rate-limits.yml
   - type: FinOps
     url: finops/black-forest-labs-finops.yml
+  - type: Blog
+    url: https://bfl.ai/blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
