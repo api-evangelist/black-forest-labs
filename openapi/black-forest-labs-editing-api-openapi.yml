@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Black Forest Labs FLUX Editing API
+  description: 'Asynchronous image generation API from Black Forest Labs. Submit a
+
+    generation request to a model-specific endpoint and poll
+
+    `/v1/get_result` (or use the optional webhook callback) for the
+
+    finished image. Includes the FLUX, FLUX.1, and FLUX.2 model families,
+
+    Fill/Expand image editing tools, credit lookup, and fine-tune
+
+    management.
+
+    '
+  version: '1.0'
+  contact:
+    name: Black Forest Labs
+    url: https://docs.bfl.ai
+servers:
+- url: https://api.bfl.ai
+  description: Global
+- url: https://api.us.bfl.ai
+  description: United States region
+- url: https://api.eu.bfl.ai
+  description: European region (GDPR)
+security:
+- apiKey: []
+tags:
+- name: Editing
+  description: Image editing tools (fill, expand, erase).
+paths:
+  /v1/flux-pro-1.0-fill:
+    post:
+      tags:
+      - Editing
+      summary: FLUX.1 Fill [pro] - inpaint with a mask
+      operationId: generateFluxFill
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/GenerationRequest'
+              - type: object
+                required:
+                - image
+                properties:
+                  image:
+                    type: string
+                    description: Base64-encoded source image.
+                  mask:
+                    type: string
+                    description: Base64-encoded mask image.
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+  /v1/flux-pro-1.0-expand:
+    post:
+      tags:
+      - Editing
+      summary: FLUX.1 Expand [pro] - outpaint
+      operationId: generateFluxExpand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/GenerationRequest'
+              - type: object
+                required:
+                - image
+                properties:
+                  image:
+                    type: string
+                    description: Base64-encoded source image.
+                  top:
+                    type: integer
+                  bottom:
+                    type: integer
+                  left:
+                    type: integer
+                  right:
+                    type: integer
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+components:
+  responses:
+    AsyncResponse:
+      description: Generation task queued.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AsyncResponse'
+  schemas:
+    GenerationRequest:
+      type: object
+      properties:
+        prompt:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        aspect_ratio:
+          type: string
+          example: '16:9'
+        seed:
+          type: integer
+        prompt_upsampling:
+          type: boolean
+          default: false
+        safety_tolerance:
+          type: integer
+          minimum: 0
+          maximum: 6
+        output_format:
+          type: string
+          enum:
+          - jpeg
+          - png
+          - webp
+        webhook_url:
+          type: string
+          format: uri
+        webhook_secret:
+          type: string
+    AsyncResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        polling_url:
+          type: string
+          format: uri
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-key
+      description: BFL API key.

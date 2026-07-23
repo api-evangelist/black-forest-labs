@@ -1,0 +1,210 @@
+openapi: 3.1.0
+info:
+  title: Black Forest Labs FLUX Editing Generation API
+  description: 'Asynchronous image generation API from Black Forest Labs. Submit a
+
+    generation request to a model-specific endpoint and poll
+
+    `/v1/get_result` (or use the optional webhook callback) for the
+
+    finished image. Includes the FLUX, FLUX.1, and FLUX.2 model families,
+
+    Fill/Expand image editing tools, credit lookup, and fine-tune
+
+    management.
+
+    '
+  version: '1.0'
+  contact:
+    name: Black Forest Labs
+    url: https://docs.bfl.ai
+servers:
+- url: https://api.bfl.ai
+  description: Global
+- url: https://api.us.bfl.ai
+  description: United States region
+- url: https://api.eu.bfl.ai
+  description: European region (GDPR)
+security:
+- apiKey: []
+tags:
+- name: Generation
+  description: Image generation endpoints.
+paths:
+  /v1/flux-pro-1.1:
+    post:
+      tags:
+      - Generation
+      summary: FLUX 1.1 [pro] generation
+      operationId: generateFluxPro11
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/flux-pro-1.1-ultra:
+    post:
+      tags:
+      - Generation
+      summary: FLUX 1.1 [pro] Ultra generation
+      operationId: generateFluxPro11Ultra
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/flux-dev:
+    post:
+      tags:
+      - Generation
+      summary: FLUX.1 [dev] generation
+      operationId: generateFluxDev
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/flux-2-pro:
+    post:
+      tags:
+      - Generation
+      summary: FLUX.2 [PRO] generation
+      operationId: generateFlux2Pro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/flux-2-flex:
+    post:
+      tags:
+      - Generation
+      summary: FLUX.2 [FLEX] generation
+      operationId: generateFlux2Flex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+  /v1/flux-2-max:
+    post:
+      tags:
+      - Generation
+      summary: FLUX.2 [MAX] generation
+      operationId: generateFlux2Max
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+      responses:
+        '200':
+          $ref: '#/components/responses/AsyncResponse'
+components:
+  responses:
+    AsyncResponse:
+      description: Generation task queued.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AsyncResponse'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HTTPValidationError'
+  schemas:
+    AsyncResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        polling_url:
+          type: string
+          format: uri
+    GenerationRequest:
+      type: object
+      properties:
+        prompt:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+        aspect_ratio:
+          type: string
+          example: '16:9'
+        seed:
+          type: integer
+        prompt_upsampling:
+          type: boolean
+          default: false
+        safety_tolerance:
+          type: integer
+          minimum: 0
+          maximum: 6
+        output_format:
+          type: string
+          enum:
+          - jpeg
+          - png
+          - webp
+        webhook_url:
+          type: string
+          format: uri
+        webhook_secret:
+          type: string
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            properties:
+              loc:
+                type: array
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+              msg:
+                type: string
+              type:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-key
+      description: BFL API key.

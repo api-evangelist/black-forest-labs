@@ -1,0 +1,178 @@
+openapi: 3.1.0
+info:
+  title: Black Forest Labs FLUX Editing Utility API
+  description: 'Asynchronous image generation API from Black Forest Labs. Submit a
+
+    generation request to a model-specific endpoint and poll
+
+    `/v1/get_result` (or use the optional webhook callback) for the
+
+    finished image. Includes the FLUX, FLUX.1, and FLUX.2 model families,
+
+    Fill/Expand image editing tools, credit lookup, and fine-tune
+
+    management.
+
+    '
+  version: '1.0'
+  contact:
+    name: Black Forest Labs
+    url: https://docs.bfl.ai
+servers:
+- url: https://api.bfl.ai
+  description: Global
+- url: https://api.us.bfl.ai
+  description: United States region
+- url: https://api.eu.bfl.ai
+  description: European region (GDPR)
+security:
+- apiKey: []
+tags:
+- name: Utility
+  description: Result polling, credits, fine-tune management.
+paths:
+  /v1/get_result:
+    get:
+      tags:
+      - Utility
+      summary: Retrieve generation result
+      operationId: getResult
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: string
+        description: Task identifier returned by a generation endpoint.
+      responses:
+        '200':
+          description: Current status (and result when ready).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/credits:
+    get:
+      tags:
+      - Utility
+      summary: Get account credit balance
+      operationId: getCredits
+      responses:
+        '200':
+          description: Available credits.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  credits:
+                    type: number
+  /v1/my_finetunes:
+    get:
+      tags:
+      - Utility
+      summary: List the caller's fine-tunes
+      operationId: listFinetunes
+      responses:
+        '200':
+          description: Fine-tune list.
+  /v1/finetune_details:
+    get:
+      tags:
+      - Utility
+      summary: Get fine-tune details
+      operationId: getFinetuneDetails
+      parameters:
+      - in: query
+        name: finetune_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Fine-tune details.
+  /v1/delete_finetune:
+    post:
+      tags:
+      - Utility
+      summary: Delete a fine-tune
+      operationId: deleteFinetune
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - finetune_id
+              properties:
+                finetune_id:
+                  type: string
+      responses:
+        '200':
+          description: Deletion acknowledged.
+components:
+  responses:
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HTTPValidationError'
+  schemas:
+    ResultResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+          - Pending
+          - Ready
+          - Error
+          - Task not found
+          - Request Moderated
+          - Content Moderated
+        result:
+          type: object
+          nullable: true
+          properties:
+            sample:
+              type: string
+              format: uri
+        progress:
+          type: number
+          nullable: true
+        details:
+          type: object
+          nullable: true
+        preview:
+          type: object
+          nullable: true
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            properties:
+              loc:
+                type: array
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+              msg:
+                type: string
+              type:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-key
+      description: BFL API key.
