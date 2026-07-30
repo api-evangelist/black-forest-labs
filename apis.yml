@@ -8,7 +8,20 @@ description: >-
   with model-named paths (e.g. /v1/flux-2-pro). Models include FLUX.2 (flex/pro/max/klein),
   FLUX.1 Kontext, FLUX1.1 [pro] Ultra, FLUX1.1 [pro], FLUX.1 Fill, and FLUX Schnell. Auth via
   BFL_API_KEY bearer token.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/black-forest-labs.png
 tags:
   - AI
   - Image Generation
@@ -19,34 +32,63 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: black-forest-labs:flux
-    name: Flux Image Generation API
-    description: >-
-      REST API for asynchronous image generation across the Flux model family. Submit a
-      generation request, then poll the returned polling_url for the result. Global endpoint
-      at https://api.bfl.ai with regional alternatives at https://api.eu.bfl.ai (GDPR) and
-      https://api.us.bfl.ai. Model-name path pattern /v1/{model}.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.bfl.ai/
-    baseURL: https://api.bfl.ai
-    tags:
-      - Image Generation
-      - Flux
-      - Async
-      - Polling
-      - Text-to-Image
-      - Image Editing
-    properties:
-      - type: Documentation
-        url: https://docs.bfl.ai/
-      - type: Signup
-        url: https://dashboard.bfl.ai/
-      - type: Pricing
-        url: https://bfl.ai/pricing
-      - type: LlmsText
-        url: https://docs.bfl.ml/llms.txt
-      - type: GitHub
-        url: https://github.com/black-forest-labs/flux
+- aid: black-forest-labs:flux
+  name: Flux Image Generation API
+  description: >-
+    REST API for asynchronous image generation across the Flux model family. Submit a generation request,
+    then poll the returned polling_url for the result. Global endpoint at https://api.bfl.ai with regional
+    alternatives at https://api.eu.bfl.ai (GDPR) and https://api.us.bfl.ai. Model-name path pattern /v1/{model}.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Image Generation
+  - Flux
+  - Async
+  - Polling
+  - Text-to-Image
+  - Image Editing
+  properties:
+  - type: Documentation
+    url: https://docs.bfl.ai/
+  - type: Signup
+    url: https://dashboard.bfl.ai/
+  - type: Pricing
+    url: https://bfl.ai/pricing
+  - type: LlmsText
+    url: https://docs.bfl.ml/llms.txt
+  - type: GitHub
+    url: https://github.com/black-forest-labs/flux
+- aid: black-forest-labs:black-forest-labs-editing-api
+  name: Black Forest Labs Editing API
+  description: Image editing tools (fill, expand, erase).
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Editing
+  properties:
+  - type: OpenAPI
+    url: openapi/black-forest-labs-editing-api-openapi.yml
+- aid: black-forest-labs:black-forest-labs-generation-api
+  name: Black Forest Labs Generation API
+  description: Image generation endpoints.
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Generation
+  properties:
+  - type: OpenAPI
+    url: openapi/black-forest-labs-generation-api-openapi.yml
+- aid: black-forest-labs:black-forest-labs-utility-api
+  name: Black Forest Labs Utility API
+  description: Result polling, credits, fine-tune management.
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Utility
+  properties:
+  - type: OpenAPI
+    url: openapi/black-forest-labs-utility-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/black-forest-labs-agentic-access.yml
