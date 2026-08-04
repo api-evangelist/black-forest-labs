@@ -1,0 +1,18 @@
+{
+  "provider": "black-forest-labs",
+  "sources": [
+    "black-forest-labs-editing-api-openapi.yml",
+    "black-forest-labs-generation-api-openapi.yml",
+    "black-forest-labs-utility-api-openapi.yml"
+  ],
+  "outputs": [
+    "black-forest-labs-editing-api-openapi.yml",
+    "black-forest-labs-generation-api-openapi.yml",
+    "black-forest-labs-utility-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
