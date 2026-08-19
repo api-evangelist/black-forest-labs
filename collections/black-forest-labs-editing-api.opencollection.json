@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Black Forest Labs FLUX Editing API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-key",
+      "value": "{{x-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Editing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "FLUX.1 Fill [pro] - inpaint with a mask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.0-fill",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.1 Fill [pro] - inpaint with a mask"
+        },
+        {
+          "info": {
+            "name": "FLUX.1 Expand [pro] - outpaint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bfl.ai/v1/flux-pro-1.0-expand",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "FLUX.1 Expand [pro] - outpaint"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

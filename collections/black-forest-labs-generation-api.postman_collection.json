@@ -1,0 +1,845 @@
+{
+  "item": [
+    {
+      "id": "1d283876-6703-4117-94b5-c2119c26d4a7",
+      "name": "Generation",
+      "description": {
+        "content": "Image generation endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "983c1f2d-4bba-47d5-bdf0-829be6bd7e17",
+          "name": "FLUX 1.1 [pro] generation",
+          "request": {
+            "name": "FLUX 1.1 [pro] generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-pro-1.1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "38eaed37-8da3-4bfe-9bdc-b9f2bd9937cb",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50854040-ba8e-464e-9f0d-946fe85776f2",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4233de42-93aa-466f-a46f-e514b8468179",
+          "name": "FLUX 1.1 [pro] Ultra generation",
+          "request": {
+            "name": "FLUX 1.1 [pro] Ultra generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-pro-1.1-ultra"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "986a6eb5-63c4-4b15-a213-db200294f63b",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.1-ultra"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad53f879-4db9-48dd-a0ec-871792b80baf",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.1-ultra"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2770e4c5-cfa7-4c42-a087-13990a42855f",
+          "name": "FLUX.1 [dev] generation",
+          "request": {
+            "name": "FLUX.1 [dev] generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-dev"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c34347c3-f8a4-4be2-98cc-5e5e7b6172a6",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-dev"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5db70d53-286e-48ff-8d62-a988c86a4b3e",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-dev"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8cf8c99-cded-43bd-aadb-03795335fa3b",
+          "name": "FLUX.2 [PRO] generation",
+          "request": {
+            "name": "FLUX.2 [PRO] generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-2-pro"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fa9e3549-4208-496d-a5f3-fa294d73f8c4",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-2-pro"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ecb60f9-7b06-49ee-ada3-cf95ebdc48a3",
+              "name": "Request validation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-2-pro"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c1c5f55-a543-46c9-92b2-caf631aa2bf8",
+          "name": "FLUX.2 [FLEX] generation",
+          "request": {
+            "name": "FLUX.2 [FLEX] generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-2-flex"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ad1c5c1-bda7-4d04-a377-555e86c61f3b",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-2-flex"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b719cb8-6291-4e4b-a333-a4faa9bb319e",
+          "name": "FLUX.2 [MAX] generation",
+          "request": {
+            "name": "FLUX.2 [MAX] generation",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-2-max"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c0d9563f-a71b-45c3-8702-a7ce5457a80d",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-2-max"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"https://mqHOVsHHQJpcgcjlcVBdbjSwNyaplUILP.kncmi4qU\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bfl.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "303655f5-5424-4436-8dff-d4d29a366e6b",
+    "name": "Black Forest Labs FLUX Editing Generation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Asynchronous image generation API from Black Forest Labs. Submit a\ngeneration request to a model-specific endpoint and poll\n`/v1/get_result` (or use the optional webhook callback) for the\nfinished image. Includes the FLUX, FLUX.1, and FLUX.2 model families,\nFill/Expand image editing tools, credit lookup, and fine-tune\nmanagement.\n\n\nContact Support:\n Name: Black Forest Labs",
+      "type": "text/plain"
+    }
+  }
+}

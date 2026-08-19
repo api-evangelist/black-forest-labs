@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "c87b6478-e016-4975-88be-31f4339d5abf",
+      "name": "Editing",
+      "description": {
+        "content": "Image editing tools (fill, expand, erase).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f444d7f1-f33b-44b3-83a9-d307f707bc71",
+          "name": "FLUX.1 Fill [pro] - inpaint with a mask",
+          "request": {
+            "name": "FLUX.1 Fill [pro] - inpaint with a mask",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-pro-1.0-fill"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"image\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\",\n  \"mask\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99c2e989-a1bd-4864-8436-3cc7d206a6fa",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.0-fill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"image\": \"<string>\",\n  \"prompt\": \"string\",\n  \"width\": 5446,\n  \"height\": 8539,\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": 6584,\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": 5,\n  \"output_format\": \"webp\",\n  \"webhook_url\": \"https://mxYNOWfvX.bgWxbuavH4.-VyKujiHfGmMjwtsrJ9yUsBORo8Rhjyb4PSmrG1VC\",\n  \"webhook_secret\": \"string\",\n  \"mask\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"http://SwmcurgLZCIienHYpvECynsWyeKUk.prck1GHKiyrU0n.M-ngca8K1xl6uilmt8+ZQ+ugcB4aLucoF,RLH7HPOaJ\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d99c99cd-e16a-46b7-be77-28f0b9547665",
+          "name": "FLUX.1 Expand [pro] - outpaint",
+          "request": {
+            "name": "FLUX.1 Expand [pro] - outpaint",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "flux-pro-1.0-expand"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"image\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"width\": \"<integer>\",\n  \"height\": \"<integer>\",\n  \"aspect_ratio\": \"<string>\",\n  \"seed\": \"<integer>\",\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": \"<integer>\",\n  \"output_format\": \"<string>\",\n  \"webhook_url\": \"<uri>\",\n  \"webhook_secret\": \"<string>\",\n  \"top\": \"<integer>\",\n  \"bottom\": \"<integer>\",\n  \"left\": \"<integer>\",\n  \"right\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3cf88df6-5111-4428-82d4-ea0013153df4",
+              "name": "Generation task queued.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "flux-pro-1.0-expand"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"image\": \"<string>\",\n  \"prompt\": \"string\",\n  \"width\": 5288,\n  \"height\": 8200,\n  \"aspect_ratio\": \"16:9\",\n  \"seed\": 6152,\n  \"prompt_upsampling\": false,\n  \"safety_tolerance\": 4,\n  \"output_format\": \"png\",\n  \"webhook_url\": \"https://GlGNoW.hzoJ7oF.5VNGj\",\n  \"webhook_secret\": \"string\",\n  \"top\": \"<integer>\",\n  \"bottom\": \"<integer>\",\n  \"left\": \"<integer>\",\n  \"right\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"polling_url\": \"http://SwmcurgLZCIienHYpvECynsWyeKUk.prck1GHKiyrU0n.M-ngca8K1xl6uilmt8+ZQ+ugcB4aLucoF,RLH7HPOaJ\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bfl.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "394e0029-4686-4744-bc56-d940d72c462e",
+    "name": "Black Forest Labs FLUX Editing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Asynchronous image generation API from Black Forest Labs. Submit a\ngeneration request to a model-specific endpoint and poll\n`/v1/get_result` (or use the optional webhook callback) for the\nfinished image. Includes the FLUX, FLUX.1, and FLUX.2 model families,\nFill/Expand image editing tools, credit lookup, and fine-tune\nmanagement.\n\n\nContact Support:\n Name: Black Forest Labs",
+      "type": "text/plain"
+    }
+  }
+}
