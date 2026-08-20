@@ -23,6 +23,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/black-forest-labs.png
 tags:
+  - Artificial Intelligence
+  - Image-Generation
+  - Flux
+  - Open Weights
+  - BFL
+tags_raw:
   - AI
   - Image Generation
   - Flux
@@ -42,6 +48,13 @@ apis:
   humanURL: https://docs.bfl.ai/
   baseURL: https://api.bfl.ai
   tags:
+  - Image-Generation
+  - Flux
+  - Async
+  - Polling
+  - Text-to-Image
+  - Image Editing
+  tags_raw:
   - Image Generation
   - Flux
   - Async
