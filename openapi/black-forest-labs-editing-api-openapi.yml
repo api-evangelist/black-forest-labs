@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Black Forest Labs FLUX Editing API
   description: 'Asynchronous image generation API from Black Forest Labs. Submit a
@@ -11,9 +11,7 @@ info:
 
     Fill/Expand image editing tools, credit lookup, and fine-tune
 
-    management.
-
-    '
+    management.'
   version: '1.0'
   contact:
     name: Black Forest Labs
@@ -89,13 +87,6 @@ paths:
         '200':
           $ref: '#/components/responses/AsyncResponse'
 components:
-  responses:
-    AsyncResponse:
-      description: Generation task queued.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AsyncResponse'
   schemas:
     GenerationRequest:
       type: object
@@ -137,6 +128,13 @@ components:
         polling_url:
           type: string
           format: uri
+  responses:
+    AsyncResponse:
+      description: Generation task queued.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AsyncResponse'
   securitySchemes:
     apiKey:
       type: apiKey
