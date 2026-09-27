@@ -10,15 +10,19 @@ description: >-
   BFL_API_KEY bearer token.
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - black-forest-labs/flux
+  open_source: unknown
   commercial: true
   callable_host: true
   label: Hosted service · you call their endpoint
-  confidence: high
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: paid
@@ -41,7 +45,7 @@ x-docs-platform-confidence: medium
 x-docs-platform-checked: 2026-09-20
 tags:
   - Artificial Intelligence
-  - Image-Generation
+  - Image Generation
   - Flux
   - Open Weights
   - BFL
@@ -51,6 +55,7 @@ tags_raw:
   - Flux
   - Open Weights
   - BFL
+  - Image-Generation
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.23'
@@ -65,7 +70,7 @@ apis:
   humanURL: https://docs.bfl.ai/
   baseURL: https://api.bfl.ai
   tags:
-  - Image-Generation
+  - Image Generation
   - Flux
   - Async
   - Polling
@@ -78,6 +83,7 @@ apis:
   - Polling
   - Text-to-Image
   - Image Editing
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://docs.bfl.ai/

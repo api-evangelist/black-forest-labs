@@ -129,32 +129,6 @@ paths:
           $ref: '#/components/responses/AsyncResponse'
 components:
   schemas:
-    HTTPValidationError:
-      type: object
-      properties:
-        detail:
-          type: array
-          items:
-            type: object
-            properties:
-              loc:
-                type: array
-                items:
-                  oneOf:
-                  - type: string
-                  - type: integer
-              msg:
-                type: string
-              type:
-                type: string
-    AsyncResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        polling_url:
-          type: string
-          format: uri
     GenerationRequest:
       type: object
       properties:
@@ -187,19 +161,45 @@ components:
           format: uri
         webhook_secret:
           type: string
+    AsyncResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        polling_url:
+          type: string
+          format: uri
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            properties:
+              loc:
+                type: array
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+              msg:
+                type: string
+              type:
+                type: string
   responses:
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/HTTPValidationError'
     AsyncResponse:
       description: Generation task queued.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/AsyncResponse'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HTTPValidationError'
   securitySchemes:
     apiKey:
       type: apiKey
