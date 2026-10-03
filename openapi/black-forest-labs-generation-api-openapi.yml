@@ -128,7 +128,38 @@ paths:
         '200':
           $ref: '#/components/responses/AsyncResponse'
 components:
+  responses:
+    AsyncResponse:
+      description: Generation task queued.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AsyncResponse'
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HTTPValidationError'
   schemas:
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            properties:
+              loc:
+                type: array
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+              msg:
+                type: string
+              type:
+                type: string
     GenerationRequest:
       type: object
       properties:
@@ -169,37 +200,6 @@ components:
         polling_url:
           type: string
           format: uri
-    HTTPValidationError:
-      type: object
-      properties:
-        detail:
-          type: array
-          items:
-            type: object
-            properties:
-              loc:
-                type: array
-                items:
-                  oneOf:
-                  - type: string
-                  - type: integer
-              msg:
-                type: string
-              type:
-                type: string
-  responses:
-    AsyncResponse:
-      description: Generation task queued.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AsyncResponse'
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/HTTPValidationError'
   securitySchemes:
     apiKey:
       type: apiKey
