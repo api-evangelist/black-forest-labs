@@ -87,7 +87,22 @@ paths:
         '200':
           $ref: '#/components/responses/AsyncResponse'
 components:
+  responses:
+    AsyncResponse:
+      description: Generation task queued.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AsyncResponse'
   schemas:
+    AsyncResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        polling_url:
+          type: string
+          format: uri
     GenerationRequest:
       type: object
       properties:
@@ -120,21 +135,6 @@ components:
           format: uri
         webhook_secret:
           type: string
-    AsyncResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        polling_url:
-          type: string
-          format: uri
-  responses:
-    AsyncResponse:
-      description: Generation task queued.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/AsyncResponse'
   securitySchemes:
     apiKey:
       type: apiKey

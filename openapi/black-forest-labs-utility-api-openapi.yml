@@ -112,13 +112,6 @@ paths:
         '200':
           description: Deletion acknowledged.
 components:
-  responses:
-    ValidationError:
-      description: Request validation failed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/HTTPValidationError'
   schemas:
     ResultResponse:
       type: object
@@ -168,6 +161,13 @@ components:
                 type: string
               type:
                 type: string
+  responses:
+    ValidationError:
+      description: Request validation failed.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/HTTPValidationError'
   securitySchemes:
     apiKey:
       type: apiKey

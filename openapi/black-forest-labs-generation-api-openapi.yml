@@ -142,6 +142,14 @@ components:
           schema:
             $ref: '#/components/schemas/HTTPValidationError'
   schemas:
+    AsyncResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        polling_url:
+          type: string
+          format: uri
     HTTPValidationError:
       type: object
       properties:
@@ -192,14 +200,6 @@ components:
           format: uri
         webhook_secret:
           type: string
-    AsyncResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        polling_url:
-          type: string
-          format: uri
   securitySchemes:
     apiKey:
       type: apiKey
