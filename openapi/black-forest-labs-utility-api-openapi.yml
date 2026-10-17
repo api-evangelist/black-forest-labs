@@ -113,6 +113,24 @@ paths:
           description: Deletion acknowledged.
 components:
   schemas:
+    HTTPValidationError:
+      type: object
+      properties:
+        detail:
+          type: array
+          items:
+            type: object
+            properties:
+              loc:
+                type: array
+                items:
+                  oneOf:
+                  - type: string
+                  - type: integer
+              msg:
+                type: string
+              type:
+                type: string
     ResultResponse:
       type: object
       properties:
@@ -143,24 +161,6 @@ components:
         preview:
           type: object
           nullable: true
-    HTTPValidationError:
-      type: object
-      properties:
-        detail:
-          type: array
-          items:
-            type: object
-            properties:
-              loc:
-                type: array
-                items:
-                  oneOf:
-                  - type: string
-                  - type: integer
-              msg:
-                type: string
-              type:
-                type: string
   responses:
     ValidationError:
       description: Request validation failed.
