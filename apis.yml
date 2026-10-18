@@ -74,7 +74,6 @@ apis:
   - Flux
   - Async
   - Polling
-  - Text-to-Image
   - Image Editing
   tags_raw:
   - Image Generation
