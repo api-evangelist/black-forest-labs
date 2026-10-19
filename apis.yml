@@ -94,26 +94,6 @@ apis:
     url: https://docs.bfl.ml/llms.txt
   - type: GitHub
     url: https://github.com/black-forest-labs/flux
-- aid: black-forest-labs:black-forest-labs-editing-api
-  name: Black Forest Labs Editing API
-  description: Image editing tools (fill, expand, erase).
-  humanURL: https://docs.bfl.ai/
-  baseURL: https://api.bfl.ai
-  tags:
-  - Editing
-  properties:
-  - type: OpenAPI
-    url: openapi/black-forest-labs-editing-api-openapi.yml
-- aid: black-forest-labs:black-forest-labs-generation-api
-  name: Black Forest Labs Generation API
-  description: Image generation endpoints.
-  humanURL: https://docs.bfl.ai/
-  baseURL: https://api.bfl.ai
-  tags:
-  - Generation
-  properties:
-  - type: OpenAPI
-    url: openapi/black-forest-labs-generation-api-openapi.yml
 - aid: black-forest-labs:black-forest-labs-utility-api
   name: Black Forest Labs Utility API
   description: Result polling, credits, fine-tune management.
@@ -124,6 +104,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/black-forest-labs-utility-api-openapi.yml
+- aid: black-forest-labs:black-forest-labs-credits-api
+  name: Black Forest Labs Credits API
+  description: The Credits API from Black Forest Labs — 1 operation(s) for credits.
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Credits
+  properties:
+  - type: OpenAPI
+    url: openapi/black-forest-labs-credits-api-openapi.yml
+- aid: black-forest-labs:black-forest-labs-models-api
+  name: Black Forest Labs Models API
+  description: Generation task endpoints. These endpoints allow you to submit generation tasks.
+  humanURL: https://docs.bfl.ai/
+  baseURL: https://api.bfl.ai
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/black-forest-labs-models-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/black-forest-labs-agentic-access.yml

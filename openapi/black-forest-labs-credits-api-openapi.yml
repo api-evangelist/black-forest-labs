@@ -1,0 +1,43 @@
+openapi: 3.2.0
+info:
+  title: BFL Credits API
+  description: Authorize with an API key from your user profile.
+  version: 0.0.1
+servers:
+- url: https://api.bfl.ai
+  description: BFL API
+tags:
+- name: Credits
+paths:
+  /v1/credits:
+    get:
+      summary: Get the user's credits
+      operationId: get_credits_v1_credits_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreditsResponse'
+      security:
+      - APIKeyHeader: []
+      tags:
+      - Credits
+components:
+  schemas:
+    CreditsResponse:
+      properties:
+        credits:
+          type: number
+          title: Credits
+          description: User's current credit balance
+      type: object
+      required:
+      - credits
+      title: CreditsResponse
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: x-key

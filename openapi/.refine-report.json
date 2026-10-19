@@ -1,11 +1,11 @@
 {
   "provider": "black-forest-labs",
   "sources": [
-    "_original/black-forest-labs-openapi.yml"
+    "_original/black-forest-labs-openapi.json"
   ],
   "outputs": [
-    "black-forest-labs-editing-api-openapi.yml",
-    "black-forest-labs-generation-api-openapi.yml",
+    "black-forest-labs-credits-api-openapi.yml",
+    "black-forest-labs-models-api-openapi.yml",
     "black-forest-labs-utility-api-openapi.yml"
   ],
   "archived": [],
@@ -13,12 +13,10 @@
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "black-forest-labs-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "black-forest-labs-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "black-forest-labs-openapi.json: tagged paths GET /v1/credits -> Credits",
+    "black-forest-labs-openapi.json: declared missing tag: Credits",
+    "apis.yml register: written (+2 apis, 4 total)"
   ],
-  "skipped": [
-    "black-forest-labs-editing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "black-forest-labs-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "black-forest-labs-utility-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
