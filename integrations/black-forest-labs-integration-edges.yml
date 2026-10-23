@@ -17,7 +17,42 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: Hugging Face (hugging-face-hub)
+  partner: hugging-face
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: hugging-face-hub
+  evidence: https://huggingface.co/black-forest-labs
+  mirror_of: hugging-face/integrations/hugging-face-integration-edges.yml
+  apps:
+  - black-forest-labs/kontext-bench
+  - black-forest-labs/FLUX.1-dev
+  - black-forest-labs/FLUX.1-schnell
+  - black-forest-labs/flux-3-image-klein-comfy
+  - black-forest-labs/FLUX.2-klein-base-4B
+  - black-forest-labs/FLUX.2-klein-4B
+  - black-forest-labs/FLUX.2-klein-4b-fp8
+  - black-forest-labs/FLUX.2-dev
+  - black-forest-labs/FLUX.1-Kontext-dev
+  - black-forest-labs/FLUX.1-Kontext-Dev
+  - black-forest-labs/FLUX.2-klein-9B
+  - black-forest-labs/FLUX.1-Krea-dev
+  - black-forest-labs/FLUX.1-Fill-dev
+  - black-forest-labs/flux-klein-9b-kv
+  listing_count: 3
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Hugging Face Hub datasets
+  badges:
+  - Verified publisher (Hugging Face verified organisation)
 generated: '2026-10-13'
 method: searched
 checked:
 - https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+- hugging-face/integrations/hugging-face-integration-edges.yml
+source:
+- hugging-face/integrations/hugging-face-integration-edges.yml
