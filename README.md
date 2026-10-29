@@ -1,4 +1,4 @@
-# Black Forest Labs (black-forest-labs)
+# Black Forest Labs
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,60 +66,128 @@
 
 Black Forest Labs is the company behind the Flux family of image generation models. The Flux API exposes asynchronous image generation endpoints via global and regional base URLs with model-named paths (e.g. /v1/flux-2-pro). Models include FLUX.2 (flex/pro/max/klein), FLUX.1 Kontext, FLUX1.1 [pro] Ultra, FLUX1.1 [pro], FLUX.1 Fill, and FLUX Schnell. Auth via BFL_API_KEY bearer token.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/black-forest-labs/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/black-forest-labs/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Image Generation · Flux · Open Weights · BFL
 
-## Tags
+## Black Forest Labs on APIs.io
 
-- AI
-- Image Generation
-- Flux
-- Open Weights
-- BFL
+Everything profiled for Black Forest Labs is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/black-forest-labs/](https://apis.io/providers/black-forest-labs/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [Flux Image Generation API](https://apis.io/apis/black-forest-labs/flux/) — REST API for asynchronous image generation across the Flux model family. Submit a generation request, then poll the returned polling_url for the result.…
+- [Black Forest Labs Editing API](https://apis.io/apis/black-forest-labs/black-forest-labs-editing-api/) — Image editing tools (fill, expand, erase).
+- [Black Forest Labs Generation API](https://apis.io/apis/black-forest-labs/black-forest-labs-generation-api/) — Image generation endpoints.
+- [Black Forest Labs Utility API](https://apis.io/apis/black-forest-labs/black-forest-labs-utility-api/) — Result polling, credits, fine-tune management.
 
-## APIs
+### Published properties
 
-### Flux Image Generation API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for asynchronous image generation across the Flux model family. Submit a generation request, then poll the returned polling_url for the result. Global endpoint at https://api.bfl.ai with regional alternatives at https://api.eu.bfl.ai (GDPR) and https://api.us.bfl.ai. Model-name path pattern /v1/{model}.
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.bfl.ai/](https://docs.bfl.ai/)
-- **Base URL:** `https://api.bfl.ai`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [Moved to /providers/black-forest-labs/](https://apis.io/servers/black-forest-labs/black-forest-labs/)
 
-- Image Generation
-- Flux
-- Async
-- Polling
-- Text-to-Image
-- Image Editing
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.bfl.ai/)
-- [Sign Up](https://dashboard.bfl.ai/)
-- [Pricing](https://bfl.ai/pricing)
-- [L L Ms Txt](https://docs.bfl.ml/llms.txt)
-- [Git Hub](https://github.com/black-forest-labs/flux)
-- [Postman Collection](collections/black-forest-labs.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/black-forest-labs.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Black Forest Labs Agentic Access](https://apis.io/agentic-access/black-forest-labs/black-forest-labs-agentic-access/)
 
-## Common Properties
+#### Collections (4)
 
-- [LinkedIn](https://www.linkedin.com/company/bflai)
+Postman and Open Collection request collections.
+
+- [Black Forest Labs FLUX API](https://apis.io/collections/black-forest-labs/open-black-forest-labs/)
+- [Black Forest Labs FLUX Editing API](https://apis.io/collections/black-forest-labs/open-black-forest-labs-editing-api/)
+- [Black Forest Labs FLUX Editing Generation API](https://apis.io/collections/black-forest-labs/open-black-forest-labs-generation-api/)
+- [Black Forest Labs FLUX Editing Utility API](https://apis.io/collections/black-forest-labs/open-black-forest-labs-utility-api/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Black Forest Labs Authentication](https://apis.io/security/black-forest-labs/black-forest-labs-authentication/)
+- [Black Forest Labs Domain Security](https://apis.io/security/black-forest-labs/black-forest-labs-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Black Forest Labs Plans Pricing](https://apis.io/plans/black-forest-labs/black-forest-labs-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Black Forest Labs Rate Limits](https://apis.io/rate-limits/black-forest-labs/black-forest-labs-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Black Forest Labs Finops](https://apis.io/finops/black-forest-labs/black-forest-labs-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://blackforestlabs.ai/)
 - [Documentation](https://docs.bfl.ai/)
-- [Git Hub](https://github.com/black-forest-labs)
-- [Plans](plans/black-forest-labs-plans-pricing.yml)
-- [Rate Limits](rate-limits/black-forest-labs-rate-limits.yml)
-- [Fin Ops](finops/black-forest-labs-finops.yml)
+- [Blog](https://bfl.ai/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.0** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 45.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 28.9 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 10.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/black-forest-labs/](https://apis.io/providers/black-forest-labs/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Black Forest Labs: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/black-forest-labs/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
